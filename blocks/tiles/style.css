@@ -1,0 +1,45 @@
+.total-tiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 20px;
+}
+
+.total-tiles__tile {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	min-height: 320px;
+	background: #334155 center / cover no-repeat;
+	color: #fff;
+	overflow: hidden;
+}
+
+.total-tiles__tile::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0) 60%);
+}
+
+.total-tiles__content {
+	position: relative;
+	padding: 1.5em;
+}
+
+.total-tiles__title {
+	margin: 0 0 .75em;
+	color: inherit;
+}
+
+.total-tiles__cta {
+	display: inline-block;
+	padding: .5em 1.25em;
+	background: #fff;
+	color: #111;
+	text-decoration: none;
+}
+
+.total-tiles__cta:hover {
+	background: #3b82f6;
+	color: #fff;
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/tiles",
+	"title": "Tiles",
+	"category": "total",
+	"icon": "screenoptions",
+	"description": "A section of tiles with background image, title and call to action.",
+	"keywords": [ "tiles", "cards", "cta" ],
+	"textdomain": "total",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"jsx": false
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

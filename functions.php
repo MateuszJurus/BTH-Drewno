@@ -210,7 +210,12 @@ require get_template_directory() . '/inc/widgets/widget-personal-info.php';
 require get_template_directory() . '/inc/widgets/widget-latest-post.php';
 
 require get_template_directory() . '/inc/custom_tab.php';
- 
+
+/**
+ * Gutenberg blocks.
+ */
+require get_template_directory() . '/inc/blocks.php';
+
 
 if( function_exists('acf_add_options_page') ) {
     
@@ -248,4 +253,3 @@ function smartwp_remove_wp_block_library_css(){
 
    $duration = (microtime(true) - $start); // Calculate the duration
 
-header('Server-Timing: wpfunctions;dur=' . $duration);
