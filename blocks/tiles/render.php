@@ -18,18 +18,28 @@ if ( empty( $tiles ) ) {
 	<?php foreach ( $tiles as $tile ) :
 		$image = ! empty( $tile['image'] ) ? wp_get_attachment_image_url( $tile['image'], 'large' ) : '';
 		$link  = $tile['cta'] ?? null;
+		$url   = ! empty( $link['url'] ) ? $link['url'] : '';
+		$attrs = 'class="total-tiles__tile"';
+		if ( $url ) {
+			$attrs .= ' href="' . esc_url( $url ) . '"';
+			if ( ! empty( $link['target'] ) ) {
+				$attrs .= ' target="' . esc_attr( $link['target'] ) . '" rel="noopener"';
+			}
+		}
+		if ( $image ) {
+			$attrs .= ' style="background-image:url(' . esc_url( $image ) . ')"';
+		}
+		$tag = $url ? 'a' : 'div';
 		?>
-		<div class="total-tiles__tile"<?php echo $image ? ' style="background-image:url(' . esc_url( $image ) . ')"' : ''; ?>>
+		<<?php echo $tag; ?> <?php echo $attrs; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
 			<div class="total-tiles__content">
 				<?php if ( ! empty( $tile['title'] ) ) : ?>
 					<h3 class="total-tiles__title"><?php echo esc_html( $tile['title'] ); ?></h3>
 				<?php endif; ?>
-				<?php if ( ! empty( $link['url'] ) ) : ?>
-					<a class="total-tiles__cta" href="<?php echo esc_url( $link['url'] ); ?>"<?php echo ! empty( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '" rel="noopener"' : ''; ?>>
-						<?php echo esc_html( $link['title'] ?: __( 'Read more', 'total' ) ); ?>
-					</a>
+				<?php if ( $url ) : ?>
+					<span class="total-tiles__cta"><?php echo esc_html( $link['title'] ?: __( 'Read more', 'total' ) ); ?></span>
 				<?php endif; ?>
 			</div>
-		</div>
+		</<?php echo $tag; ?>>
 	<?php endforeach; ?>
 </section>

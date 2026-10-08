@@ -11,14 +11,21 @@
 	min-height: 320px;
 	background: #334155 center / cover no-repeat;
 	color: #fff;
+	text-decoration: none;
 	overflow: hidden;
+}
+
+a.total-tiles__tile:hover,
+a.total-tiles__tile:focus {
+	color: #fff;
+	text-decoration: none;
 }
 
 .total-tiles__tile::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0) 60%);
+	background: linear-gradient(to top, rgba(0, 0, 0, .65) 0%, rgba(0, 0, 0, .35) 35%, rgba(0, 0, 0, 0) 70%);
 }
 
 .total-tiles__content {
@@ -34,12 +41,13 @@
 .total-tiles__cta {
 	display: inline-block;
 	padding: .5em 1.25em;
-	background: #fff;
-	color: #111;
-	text-decoration: none;
+	background: #4b6348;
+	color: #fff;
+	transition: background-color .2s ease, transform .2s ease;
 }
 
-.total-tiles__cta:hover {
-	background: #3b82f6;
-	color: #fff;
+a.total-tiles__tile:hover .total-tiles__cta,
+a.total-tiles__tile:focus-visible .total-tiles__cta {
+	background: #3a4e38;
+	transform: translateY(-2px);
 }
