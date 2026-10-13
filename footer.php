@@ -92,14 +92,6 @@
 			</div>
 		</div>
 		<?php } ?>
-
-		<div id="ht-bottom-footer">
-			<div class="ht-container">
-				<div class="ht-site-info">
-					© BTH Drewno - made by <a href="https://woodlovers.pl" rel="nofollow" target="_blank">woodlovers</a>
-				</div><!-- #site-info -->
-			</div>
-		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

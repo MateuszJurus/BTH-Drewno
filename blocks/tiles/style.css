@@ -1,3 +1,7 @@
+.ht-section.section-tiles {
+	padding: 20px 0;
+}
+
 .total-tiles {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -34,20 +38,20 @@ a.total-tiles__tile:focus {
 }
 
 .total-tiles__title {
-	margin: 0 0 .75em;
 	color: inherit;
+	font-family: Oswald,sans-serif;
+	font-size: 24px;
 }
 
 .total-tiles__cta {
 	display: inline-block;
 	padding: .5em 1.25em;
-	background: #4b6348;
+	background: #8bab0d;
 	color: #fff;
 	transition: background-color .2s ease, transform .2s ease;
 }
 
 a.total-tiles__tile:hover .total-tiles__cta,
 a.total-tiles__tile:focus-visible .total-tiles__cta {
-	background: #3a4e38;
-	transform: translateY(-2px);
+	background: #69800f;
 }

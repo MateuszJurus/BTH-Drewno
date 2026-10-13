@@ -263,3 +263,16 @@ body {
 	width: initial;
 	height: auto;
   }
+
+  .l-wrapper {
+    max-width: 1200px;
+    padding: 60px 0;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .l-wrapper {
+        width: auto;
+        padding: 30px 15px;
+    }
+}

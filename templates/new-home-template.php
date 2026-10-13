@@ -10,58 +10,16 @@ get_header( 'shop' );
 
 ?>
 
-<?php if(have_rows('slider', 1878)): ?>
+<!-- <?php
 
-<div id="ht-home-slider-section">
-	<div id="ht-bx-slider" class="owl-carousel">
-			<?php while(have_rows('slider', 1878)) : the_row(); ?>
-			<?php
-			$slide = get_sub_field('slide');
-			$img = $slide['zdjecie'];
-			$imgMobile = $slide['zdjecie_mobile'];
-			?>
-			<a href="<?php if($slide['link']['url']) { echo $slide['link']['url'];}; ?>"><div class="ht-slide">
-			<div class="ht-slide-overlay"></div>
-				<?php if($imgMobile["url"]): ?>
-					<picture>
-						<source media="(min-width: 420px)" srcset="<?php echo $img['url']; ?>">
-						<?php echo '<img alt="'. $imgMobile["alt"] .'" width="420" height="210" src="'.$imgMobile["url"].'" fetchpriority="high">';  ?>
-					</picture>
-				<?php else: ?>
-					<?php echo '<img alt="'. $img["alt"] .'" src="'.$img["url"].'" fetchpriority="high">';  ?>
-				<?php endif; ?>
-					<div class="ht-slide-caption">
-					<?php if($slide['tytul']): ?>
-					<div class="ht-slide-cap-title">
-						<span><?php echo esc_html($slide['tytul']); ?></span>
-					</div>
-					<?php endif; ?>
+// do_action( 'woocommerce_before_main_content' );
 
-				</div>
-				</div>
-			</a>
-			<?php endwhile; ?>
-		
-	</div>
-</div>
-<?php endif; ?>
-
-
-<?php
-
-do_action( 'woocommerce_before_main_content' );
-
-?>
-
-<div class="ht-section section-tiles">
-
+?> -->
 <?php
 total_render_theme_blocks();
 ?>
 
-</div>
-
-<div class="swiper swiper-realisations ht-section">
+<div class="swiper swiper-realisations ht-section l-wrapper">
 	<h2 class="ht-section-title">Nasze realizacje</h2>
   <div class="swiper-wrapper">
 	<?php 
@@ -101,7 +59,7 @@ total_render_theme_blocks();
   <div class="swiper-button-next"></div>
 </div>
 
-<div class="ht-section section-products">
+<div class="ht-section section-products l-wrapper">
 	<h2 class="ht-section-title">Proponowane produkty</h2>
 <?php
 echo do_shortcode('[featured_products per_page="5" columns="5"]');

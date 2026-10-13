@@ -90,7 +90,7 @@ function total_register_tiles_fields() {
 						'key'   => 'field_total_tiles_title',
 						'label' => 'Title',
 						'name'  => 'title',
-						'type'  => 'text',
+						'type'  => 'wysiwyg',
 					),
 					array(
 						'key'           => 'field_total_tiles_cta',
@@ -114,6 +114,94 @@ function total_register_tiles_fields() {
 	) );
 }
 add_action( 'acf/init', 'total_register_tiles_fields' );
+
+/**
+ * ACF field group for the Hero block.
+ */
+function total_register_hero_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_hero',
+		'title'    => 'Hero',
+		'fields'   => array(
+			array(
+				'key'           => 'field_total_hero_background_image',
+				'label'         => 'Background image',
+				'name'          => 'background_image',
+				'type'          => 'image',
+				'return_format' => 'id',
+				'preview_size'  => 'medium',
+			),
+			array(
+				'key'          => 'field_total_hero_title',
+				'label'        => 'Title',
+				'name'         => 'title',
+				'type'         => 'repeater',
+				'instructions' => 'Add words or phrases. Each item will be separated with a •.',
+				'layout'       => 'table',
+				'button_label' => 'Add word',
+				'sub_fields'   => array(
+					array(
+						'key'   => 'field_total_hero_title_word',
+						'label' => 'Word',
+						'name'  => 'word',
+						'type'  => 'text',
+					),
+					array(
+						'key'           => 'field_total_hero_title_link',
+						'label'         => 'Link',
+						'name'          => 'link',
+						'type'          => 'link',
+						'return_format' => 'array',
+					),
+				),
+			),
+			array(
+				'key'          => 'field_total_hero_subtitle',
+				'label'        => 'Subtitle',
+				'name'         => 'subtitle',
+				'type'         => 'repeater',
+				'instructions' => 'Add words or phrases. Each item will be separated with a •.',
+				'layout'       => 'table',
+				'button_label' => 'Add word',
+				'sub_fields'   => array(
+					array(
+						'key'   => 'field_total_hero_subtitle_word',
+						'label' => 'Word',
+						'name'  => 'word',
+						'type'  => 'text',
+					),
+					array(
+						'key'           => 'field_total_hero_subtitle_link',
+						'label'         => 'Link',
+						'name'          => 'link',
+						'type'          => 'link',
+						'return_format' => 'array',
+					),
+				),
+			),
+			array(
+				'key'   => 'field_total_hero_location',
+				'label' => 'Location',
+				'name'  => 'location',
+				'type'  => 'text',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/hero',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_hero_fields' );
 
 /**
  * Add a custom block category.

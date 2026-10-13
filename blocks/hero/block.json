@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/hero",
+	"title": "Hero",
+	"category": "total",
+	"icon": "cover-image",
+	"description": "Hero section with background image, title, subtitle, and location.",
+	"keywords": [ "hero", "banner", "header" ],
+	"textdomain": "total",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"jsx": false
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

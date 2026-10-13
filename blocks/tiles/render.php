@@ -14,7 +14,7 @@ if ( empty( $tiles ) ) {
 	return;
 }
 ?>
-<section <?php echo get_block_wrapper_attributes( array( 'class' => 'total-tiles' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
+<section <?php echo get_block_wrapper_attributes( array( 'class' => 'total-tiles l-wrapper' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
 	<?php foreach ( $tiles as $tile ) :
 		$image = ! empty( $tile['image'] ) ? wp_get_attachment_image_url( $tile['image'], 'large' ) : '';
 		$link  = $tile['cta'] ?? null;
@@ -34,7 +34,7 @@ if ( empty( $tiles ) ) {
 		<<?php echo $tag; ?> <?php echo $attrs; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
 			<div class="total-tiles__content">
 				<?php if ( ! empty( $tile['title'] ) ) : ?>
-					<h3 class="total-tiles__title"><?php echo esc_html( $tile['title'] ); ?></h3>
+					<div class="total-tiles__title"><?php echo wp_kses_post( $tile['title'] ); ?></div>
 				<?php endif; ?>
 				<?php if ( $url ) : ?>
 					<span class="total-tiles__cta"><?php echo esc_html( $link['title'] ?: __( 'Read more', 'total' ) ); ?></span>
