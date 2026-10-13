@@ -24,7 +24,7 @@
 .total-hero__overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.45);
 	z-index: 1;
 	pointer-events: none;
 }
@@ -123,8 +123,43 @@
 	font-weight: 400;
 	line-height: 1.4;
 	letter-spacing: 0.08em;
+	position: relative;
 	text-transform: uppercase;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.9);
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		width: 200px;
+		height: 2px;
+		background-color: rgba(139, 171, 13, 0.8);
+		top: 10px;
+	}
+
+	&:after {
+
+		right: -220px;
+	}
+
+	&:before {
+		left: -220px;
+	}
+
+	@media (max-width: 768px) {
+		&:before,
+		&:after {
+			width: 50px;
+			top: 10px;
+		}
+		&:after {
+			right: -60px;
+			left: auto;
+		}
+		&:before {
+			left: -60px;
+		}
+	}
 }
 
 /* Editor preview empty state */
