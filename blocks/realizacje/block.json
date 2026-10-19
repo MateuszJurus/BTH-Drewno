@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/realizacje",
+	"title": "Realizacje",
+	"category": "total",
+	"icon": "images-alt2",
+	"description": "A listing of up to 4 selected posts. Slider on mobile.",
+	"keywords": [ "realizacje", "posts", "portfolio", "projects" ],
+	"textdomain": "total",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"jsx": false
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

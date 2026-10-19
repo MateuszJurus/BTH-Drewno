@@ -61,3 +61,23 @@ const swiperProducts = new Swiper('.swiper-products', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+// Products block: slider on mobile only, grid on desktop
+document.querySelectorAll('.swiper-featured-products').forEach((el) => {
+    new Swiper(el, {
+        slidesPerView: 1.4,
+        spaceBetween: 16,
+        pagination: {
+            el: el.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2.2,
+            },
+            768: {
+                enabled: false,
+            },
+        },
+    });
+});

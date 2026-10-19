@@ -23,10 +23,15 @@
 /* Semi-transparent dark overlay for background readability */
 .total-hero__overlay {
 	position: absolute;
-	inset: 0;
-	background: rgba(0, 0, 0, 0.45);
-	z-index: 1;
-	pointer-events: none;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    pointer-events: none;
+    width: 60%;
+    height: 299px;
+    filter: blur(40px);
 }
 
 /* Inner content container - vertically and horizontally centered */
@@ -53,7 +58,6 @@
 	font-size: clamp(2rem, 5.5vw, 3.75rem);
 	font-weight: 500;
 	line-height: 1.25;
-	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.9);
 	max-width: 100%;
@@ -69,7 +73,6 @@
 	font-size: clamp(1.125rem, 2.5vw, 1.75rem);
 	font-weight: 300;
 	line-height: 1.4;
-	letter-spacing: 0.05em;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.9);
 	max-width: 100%;
 	word-wrap: break-word;
@@ -122,7 +125,6 @@
 	font-size: clamp(0.95rem, 1.8vw, 1.25rem);
 	font-weight: 400;
 	line-height: 1.4;
-	letter-spacing: 0.08em;
 	position: relative;
 	text-transform: uppercase;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.9);
@@ -134,7 +136,7 @@
 		width: 200px;
 		height: 2px;
 		background-color: rgba(139, 171, 13, 0.8);
-		top: 10px;
+		top: 13px;
 	}
 
 	&:after {
@@ -179,7 +181,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
 	.total-hero {
-		min-height: 380px;
+		min-height: 320px;
 		padding: 40px 16px;
 	}
 
@@ -194,7 +196,7 @@
 
 @media (max-width: 480px) {
 	.total-hero {
-		min-height: 320px;
+		min-height: 220px;
 		padding: 30px 12px;
 	}
 

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/product-hero",
+	"title": "Product hero",
+	"category": "total",
+	"icon": "cover-image",
+	"description": "A compact hero with breadcrumbs, title and image.",
+	"keywords": [ "hero", "product", "header", "breadcrumbs" ],
+	"textdomain": "total",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"jsx": false
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

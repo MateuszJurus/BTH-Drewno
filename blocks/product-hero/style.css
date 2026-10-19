@@ -1,0 +1,114 @@
+.total-product-hero {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+	color: #fff;
+	margin-bottom: 40px;
+
+	@media (max-width: 768px) {
+			margin-bottom: 20px;
+		}
+}
+
+.total-product-hero__inner {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	min-height: 200px;
+	gap: 16px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+.total-product-hero__title {
+	margin: 8px 0 0;
+	color: #fff;
+	font-family: Oswald, sans-serif;
+	font-size: clamp(28px, 5vw, 44px);
+	line-height: 1.1;
+	letter-spacing: .01em;
+	text-transform: uppercase;
+}
+
+.total-product-hero__title::after {
+	content: "";
+	display: block;
+	width: 48px;
+	height: 3px;
+	margin-top: 14px;
+	background: #8bab0d;
+	border-radius: 2px;
+}
+
+.total-product-hero__breadcrumbs,
+.total-product-hero__breadcrumbs a,
+.total-product-hero__breadcrumbs span {
+	color: rgba(255, 255, 255, .7);
+	font-size: 13px;
+}
+
+.total-product-hero__breadcrumbs a {
+	text-decoration: none;
+	transition: color .2s ease;
+}
+
+.total-product-hero__breadcrumbs a:hover {
+	color: #fff;
+}
+
+.total-product-hero__breadcrumbs .trail-end,
+.total-product-hero__breadcrumbs .trail-end span {
+	color: #fff;
+}
+
+.total-product-hero__breadcrumbs ul,
+.total-product-hero__breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.total-product-hero__breadcrumbs li:not(:last-child)::after {
+	content: "/";
+	margin-left: 6px;
+	opacity: .5;
+}
+
+
+.total-product-hero__media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.total-product-hero__media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(15, 23, 42, .85) 0%, rgba(15, 23, 42, .55) 50%, rgba(15, 23, 42, .25) 100%);
+}
+
+.total-product-hero__img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (min-width: 768px) {
+	.total-product-hero__inner {
+		min-height: 260px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.total-product-hero__text {
+		max-width: 640px;
+		padding: 40px 0;
+	}
+}

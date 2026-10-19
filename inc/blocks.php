@@ -204,6 +204,194 @@ function total_register_hero_fields() {
 add_action( 'acf/init', 'total_register_hero_fields' );
 
 /**
+ * ACF field group for the Products block.
+ */
+function total_register_products_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_products',
+		'title'    => 'Products',
+		'fields'   => array(
+			array(
+				'key'   => 'field_total_products_title',
+				'label' => 'Title',
+				'name'  => 'title',
+				'type'  => 'text',
+			),
+			array(
+				'key'          => 'field_total_products_description',
+				'label'        => 'Description',
+				'name'         => 'description',
+				'type'         => 'textarea',
+				'rows'         => 3,
+				'new_lines'    => 'br',
+			),
+			array(
+				'key'           => 'field_total_products_button_text',
+				'label'         => 'Button text',
+				'name'          => 'button_text',
+				'type'          => 'text',
+				'instructions'  => 'Used on every product button. Leave empty for the default.',
+				'placeholder'   => 'View product',
+			),
+			array(
+				'key'           => 'field_total_products_products',
+				'label'         => 'Products',
+				'name'          => 'products',
+				'type'          => 'post_object',
+				'post_type'     => array( 'product' ),
+				'multiple'      => 1,
+				'max'           => 4,
+				'return_format' => 'id',
+				'ui'            => 1,
+				'instructions'  => 'Select up to 4 products.',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/products',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_products_fields' );
+
+/**
+ * ACF field group for the Product hero block.
+ */
+function total_register_product_hero_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_product_hero',
+		'title'    => 'Product hero',
+		'fields'   => array(
+			array(
+				'key'   => 'field_total_product_hero_title',
+				'label' => 'Title',
+				'name'  => 'title',
+				'type'  => 'text',
+			),
+			array(
+				'key'           => 'field_total_product_hero_image',
+				'label'         => 'Image',
+				'name'          => 'image',
+				'type'          => 'image',
+				'return_format' => 'id',
+				'preview_size'  => 'medium',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/product-hero',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_product_hero_fields' );
+
+/**
+ * ACF field group for the Text block.
+ */
+function total_register_text_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_text',
+		'title'    => 'Text',
+		'fields'   => array(
+			array(
+				'key'          => 'field_total_text_content',
+				'label'        => 'Content',
+				'name'         => 'content',
+				'type'         => 'wysiwyg',
+				'tabs'         => 'all',
+				'toolbar'      => 'full',
+				'media_upload' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/text',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_text_fields' );
+
+/**
+ * ACF field group for the Realizacje block.
+ */
+function total_register_realizacje_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_realizacje',
+		'title'    => 'Realizacje',
+		'fields'   => array(
+			array(
+				'key'   => 'field_total_realizacje_title',
+				'label' => 'Title',
+				'name'  => 'title',
+				'type'  => 'text',
+			),
+			array(
+				'key'       => 'field_total_realizacje_description',
+				'label'     => 'Description',
+				'name'      => 'description',
+				'type'      => 'textarea',
+				'rows'      => 3,
+				'new_lines' => 'br',
+			),
+			array(
+				'key'           => 'field_total_realizacje_posts',
+				'label'         => 'Posts',
+				'name'          => 'posts',
+				'type'          => 'post_object',
+				'post_type'     => array( 'post' ),
+				'taxonomy'      => array( 'category:realizacje' ),
+				'multiple'      => 1,
+				'max'           => 4,
+				'return_format' => 'id',
+				'ui'            => 1,
+				'instructions'  => 'Select up to 4 posts from the "realizacje" category.',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/realizacje',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_realizacje_fields' );
+
+/**
  * Add a custom block category.
  */
 function total_block_categories( $categories ) {

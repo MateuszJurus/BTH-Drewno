@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/text",
+	"title": "Text",
+	"category": "total",
+	"icon": "editor-paragraph",
+	"description": "A rich text (WYSIWYG) section.",
+	"keywords": [ "text", "wysiwyg", "content", "paragraph" ],
+	"textdomain": "total",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"jsx": false
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}
