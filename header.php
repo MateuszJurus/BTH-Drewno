@@ -291,6 +291,8 @@ fscript {s}
 						<?php endif; ?>
 						<a
 							href="<?php echo esc_url( $header_social['url'] ); ?>"
+              target="_blank"
+              rel="noopener noreferrer"
 							class="main-nav__social"
 							aria-label="<?php esc_attr_e( 'Social media link', 'total' ); ?>"
 						>

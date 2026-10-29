@@ -15,6 +15,10 @@
 	max-width: 100%;
 	line-height: 1.7;
 	margin-inline: auto;
+
+	@media all and (max-width: 1230px) {
+		padding-inline: 10px;
+	}
 }
 
 .total-text__content > :first-child {
