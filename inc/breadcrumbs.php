@@ -263,7 +263,7 @@ class Breadcrumb_Trail {
 		$defaults = array(
 			'browse'              => esc_html__( 'Browse:',                               'total' ),
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'total' ),
-			'home'                => esc_html__( 'Home',                                  'total' ),
+			'home'                => esc_html__( 'Strona główna',                                  'total' ),
 			'error_404'           => esc_html__( '404 Not Found',                         'total' ),
 			'archives'            => esc_html__( 'Archives',                              'total' ),
 			// Translators: %s is the search query.

@@ -116,6 +116,65 @@ function total_register_tiles_fields() {
 add_action( 'acf/init', 'total_register_tiles_fields' );
 
 /**
+ * ACF field group for the Product CTA block.
+ */
+function total_register_product_cta_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+		'key'      => 'group_total_product_cta',
+		'title'    => 'Product CTA',
+		'fields'   => array(
+			array(
+				'key'          => 'field_total_product_ctas',
+				'label'        => 'Product CTA items',
+				'name'         => 'product_ctas',
+				'type'         => 'repeater',
+				'layout'       => 'block',
+				'button_label' => 'Add product CTA',
+				'sub_fields'  => array(
+					array(
+						'key'           => 'field_total_product_cta_image',
+						'label'         => 'Image',
+						'name'          => 'image',
+						'type'          => 'image',
+						'return_format' => 'id',
+						'preview_size'  => 'medium',
+					),
+					array(
+						'key'      => 'field_total_product_cta_text',
+						'label'    => 'Title',
+						'name'     => 'text',
+						'type'     => 'text',
+						'required' => 1,
+					),
+					array(
+						'key'           => 'field_total_product_cta_link',
+						'label'         => 'Link',
+						'name'          => 'link',
+						'type'          => 'link',
+						'return_format' => 'array',
+						'required'      => 1,
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'block',
+					'operator' => '==',
+					'value'    => 'acf/product-cta',
+				),
+			),
+		),
+	) );
+}
+add_action( 'acf/init', 'total_register_product_cta_fields' );
+
+/**
  * ACF field group for the Hero block.
  */
 function total_register_hero_fields() {
