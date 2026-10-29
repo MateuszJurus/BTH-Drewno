@@ -26,7 +26,7 @@ $image_html = $image ? wp_get_attachment_image( (int) $image, 'full-hd', false, 
 					<?php breadcrumb_trail( array( 'show_browse' => false ) ); ?>
 				</div>
 			<?php elseif ( ! empty( $is_preview ) ) : ?>
-				<div class="total-product-hero__breadcrumbs"><span><?php esc_html_e( 'Home', 'total' ); ?></span> / <span><?php echo esc_html( $title ); ?></span></div>
+				<div class="total-product-hero__breadcrumbs"><span>Strona główna</span> / <span><?php echo esc_html( $title ); ?></span></div>
 			<?php endif; ?>
 			<?php if ( $title ) : ?>
 				<h1 class="total-product-hero__title"><?php echo esc_html( $title ); ?></h1>

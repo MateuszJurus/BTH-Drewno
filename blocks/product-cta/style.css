@@ -1,0 +1,52 @@
+.total-product-cta {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+	&.l-wrapper {
+		padding: 0px 10px 20px;
+	}
+}
+
+.total-product-cta__item {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	min-height: 160px;
+	padding: 24px;
+	overflow: hidden;
+	background-color: #333;
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 14px;
+
+	@media all and (max-width: 767px) {
+		min-height: 120px;
+	}
+}
+
+.total-product-cta__item::before {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, .7) 100%);
+	content: '';
+}
+
+.total-product-cta__item:hover,
+.total-product-cta__item:focus {
+	color: #fff;
+}
+
+.total-product-cta__title {
+	position: relative;
+	font-family: Oswald, sans-serif;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+	.total-product-cta {
+		grid-template-columns: 1fr;
+	}
+}
