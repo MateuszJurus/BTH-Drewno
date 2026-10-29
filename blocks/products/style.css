@@ -13,7 +13,7 @@
 .total-products__heading {
 	margin: 0 0 24px;
 	font-family: Oswald, sans-serif;
-	font-size: clamp(24px, 3vw, 32px);
+	font-size: clamp(28px, 3vw, 32px);
 	letter-spacing: .02em;
 	text-transform: uppercase;
 }
@@ -37,6 +37,10 @@
 	margin: -8px 0 24px;
 	color: #475569;
 	line-height: 1.6;
+
+	@media (max-width: 768px) {
+		padding-right: 15px;
+	}
 }
 
 .total-products__item {

@@ -2080,16 +2080,6 @@ class Total_Fontawesome_Icon_Chooser extends WP_Customize_Control{
                 	<i class="fa <?php echo esc_attr($this->value()); ?>"></i>
                 	<span><i class="fa fa-angle-down"></i></span>
                 </div>
-
-                <ul class="total-icon-list clearfix">
-                	<?php
-                	$total_font_awesome_icon_array = total_font_awesome_icon_array();
-                	foreach ($total_font_awesome_icon_array as $total_font_awesome_icon) {
-							$icon_class = $this->value() == $total_font_awesome_icon ? 'icon-active' : '';
-							echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($total_font_awesome_icon).'"></i></li>';
-						}
-                	?>
-                </ul>
                 <input type="hidden" value="<?php $this->value(); ?>" <?php $this->link(); ?> />
             </label>
 		<?php

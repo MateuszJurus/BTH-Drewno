@@ -13,11 +13,11 @@ if ( empty( $title ) ) {
 	$title = get_the_title();
 }
 
-$image_html = $image ? wp_get_attachment_image( (int) $image, 'large', false, array( 'class' => 'total-product-hero__img' ) ) : '';
+$image_html = $image ? wp_get_attachment_image( (int) $image, 'full-hd', false, array( 'class' => 'total-product-hero__img' ) ) : '';
 ?>
-<section <?php echo get_block_wrapper_attributes( array( 'class' => 'total-product-hero' . ( $image_html ? ' has-image' : '' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
+<section <?php echo get_block_wrapper_attributes( array( 'class' => 'total-product-hero' . ( $image_html ? ' has-image' : '' ) ) ); ?>>
 	<?php if ( $image_html ) : ?>
-		<div class="total-product-hero__media" aria-hidden="true"><?php echo $image_html; // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+		<div class="total-product-hero__media" aria-hidden="true"><?php echo $image_html; ?></div>
 	<?php endif; ?>
 	<div class="total-product-hero__inner l-wrapper">
 		<div class="total-product-hero__text">

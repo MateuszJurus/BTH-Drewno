@@ -7,6 +7,7 @@
  */
 
 $title       = get_field( 'title' );
+$title_link  = get_field( 'title_link' );
 $description = get_field( 'description' );
 $selected    = get_field( 'posts' );
 
@@ -27,7 +28,13 @@ if ( empty( $items ) ) {
 ?>
 <section <?php echo get_block_wrapper_attributes( array( 'class' => 'total-realizacje l-wrapper' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
 	<?php if ( $title ) : ?>
-		<h2 class="total-realizacje__heading"><?php echo esc_html( $title ); ?></h2>
+		<h2 class="total-realizacje__heading">
+			<?php if ( ! empty( $title_link['url'] ) ) : ?>
+				<a href="<?php echo esc_url( $title_link['url'] ); ?>"<?php if ( ! empty( $title_link['target'] ) ) : ?> target="<?php echo esc_attr( $title_link['target'] ); ?>"<?php if ( '_blank' === $title_link['target'] ) : ?> rel="noopener"<?php endif; ?><?php endif; ?>><?php echo esc_html( $title ); ?></a>
+			<?php else : ?>
+				<?php echo esc_html( $title ); ?>
+			<?php endif; ?>
+		</h2>
 	<?php endif; ?>
 	<?php if ( $description ) : ?>
 		<div class="total-realizacje__description"><?php echo wp_kses_post( $description ); ?></div>

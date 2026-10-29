@@ -282,6 +282,23 @@ fscript {s}
 				) ); 
 				?>
 			</nav><!-- #ht-site-navigation -->
+			<?php $header_socials = function_exists( 'get_field' ) ? get_field( 'main_nav_socials', 'option' ) : array(); ?>
+			<?php if ( $header_socials ) : ?>
+				<div class="main-nav__socials">
+					<?php foreach ( $header_socials as $header_social ) : ?>
+						<?php if ( empty( $header_social['icon'] ) || empty( $header_social['url'] ) ) : ?>
+							<?php continue; ?>
+						<?php endif; ?>
+						<a
+							href="<?php echo esc_url( $header_social['url'] ); ?>"
+							class="main-nav__social"
+							aria-label="<?php esc_attr_e( 'Social media link', 'total' ); ?>"
+						>
+							<i class="<?php echo esc_attr( $header_social['icon'] ); ?>" aria-hidden="true"></i>
+						</a>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
 		</div>
 		
 	</header><!-- #ht-masthead -->

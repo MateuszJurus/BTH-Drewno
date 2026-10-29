@@ -1,7 +1,7 @@
 .total-product-hero {
 	position: relative;
 	overflow: hidden;
-	background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+	background: linear-gradient(135deg, #000000 0%, #000000 100%);
 	color: #fff;
 	margin-bottom: 40px;
 
@@ -26,7 +26,7 @@
 	margin: 8px 0 0;
 	color: #fff;
 	font-family: Oswald, sans-serif;
-	font-size: clamp(28px, 5vw, 44px);
+	font-size: clamp(32px, 5vw, 44px);
 	line-height: 1.1;
 	letter-spacing: .01em;
 	text-transform: uppercase;
@@ -90,7 +90,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(90deg, rgba(15, 23, 42, .85) 0%, rgba(15, 23, 42, .55) 50%, rgba(15, 23, 42, .25) 100%);
+	background: linear-gradient(90deg, rgb(16 16 16 / 85%) 0%, rgba(0, 0, 0, 0.15) 80%, rgba(0, 0, 0, 0.25) 100%)
 }
 
 .total-product-hero__img {
@@ -108,7 +108,7 @@
 	}
 
 	.total-product-hero__text {
-		max-width: 640px;
+		max-width: 760px;
 		padding: 40px 0;
 	}
 }

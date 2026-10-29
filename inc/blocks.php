@@ -222,6 +222,13 @@ function total_register_products_fields() {
 				'type'  => 'text',
 			),
 			array(
+				'key'           => 'field_total_products_title_link',
+				'label'         => 'Title link',
+				'name'          => 'title_link',
+				'type'          => 'link',
+				'return_format' => 'array',
+			),
+			array(
 				'key'          => 'field_total_products_description',
 				'label'        => 'Description',
 				'name'         => 'description',
@@ -355,6 +362,13 @@ function total_register_realizacje_fields() {
 				'label' => 'Title',
 				'name'  => 'title',
 				'type'  => 'text',
+			),
+			array(
+				'key'           => 'field_total_realizacje_title_link',
+				'label'         => 'Title link',
+				'name'          => 'title_link',
+				'type'          => 'link',
+				'return_format' => 'array',
 			),
 			array(
 				'key'       => 'field_total_realizacje_description',

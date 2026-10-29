@@ -38,6 +38,7 @@ function total_setup() {
 	add_image_size( 'total-blog-thumb', 400, 280, true );
 	add_image_size( 'total-thumb', 100, 100, true );
 	add_image_size( 'total-blog-header', 720, 360, true );
+	add_image_size( 'fill-hd', 1920, 768, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -157,6 +158,7 @@ function total_scripts() {
     wp_enqueue_script( 'total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), '1.01', true );
 	wp_enqueue_style( 'total-style', get_stylesheet_uri(), array(), '1.0' );
 	wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array(), '1.7' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), '4.7.0' );
 	wp_add_inline_style( 'total-style', total_dymanic_styles() );
 }
 add_action( 'wp_enqueue_scripts', 'total_scripts' );
@@ -192,6 +194,12 @@ require get_template_directory() . '/inc/total-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Header social links.
+ */
+require get_template_directory() . '/inc/font-awesome-list.php';
+require get_template_directory() . '/inc/header-socials.php';
+
+/**
  * Metabox additions.
  */
 require get_template_directory() . '/inc/total-metabox.php';
@@ -218,9 +226,18 @@ require get_template_directory() . '/inc/blocks.php';
 
 
 if( function_exists('acf_add_options_page') ) {
-    
-    acf_add_options_page();
-    
+	acf_add_options_page();
+
+	if ( function_exists( 'acf_add_options_sub_page' ) ) {
+		acf_add_options_sub_page(
+			array(
+				'page_title'  => __( 'Navigation icons', 'total' ),
+				'menu_title'  => __( 'Navigation icons', 'total' ),
+				'menu_slug'   => 'navigation-icons',
+				'parent_slug' => 'acf-options',
+			)
+		);
+	}
 }
 
 //Disable emojis in WordPress
@@ -252,4 +269,3 @@ function smartwp_remove_wp_block_library_css(){
    add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
    $duration = (microtime(true) - $start); // Calculate the duration
-

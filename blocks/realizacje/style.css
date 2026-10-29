@@ -14,7 +14,7 @@
 .total-realizacje__heading {
 	margin: 0 0 24px;
 	font-family: Oswald, sans-serif;
-	font-size: clamp(24px, 3vw, 32px);
+	font-size: clamp(28px, 3vw, 32px);
 	letter-spacing: .02em;
 	text-transform: uppercase;
 
