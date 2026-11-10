@@ -112,7 +112,7 @@ do_action( 'woocommerce_before_main_content' );
 <div class="ht-section section-products">
 	<h2 class="ht-section-title">Proponowane produkty</h2>
 <?php
-echo do_shortcode('[featured_products per_page="5" columns="5"]');
+echo do_shortcode('[featured_products per_page="4" columns="4"]');
 ?>
 
 </div>

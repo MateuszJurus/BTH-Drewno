@@ -20,6 +20,12 @@
 	gap: 16px;
 	padding-top: 32px;
 	padding-bottom: 32px;
+
+	@media all and (min-width: 769px) {
+	&.l-wrapper {
+		padding: 120px 10px;
+	}
+	}
 }
 
 .total-product-hero__title {
