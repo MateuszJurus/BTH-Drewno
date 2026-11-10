@@ -194,12 +194,6 @@ require get_template_directory() . '/inc/total-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Header social links.
- */
-require get_template_directory() . '/inc/font-awesome-list.php';
-require get_template_directory() . '/inc/header-socials.php';
-
-/**
  * Metabox additions.
  */
 require get_template_directory() . '/inc/total-metabox.php';
