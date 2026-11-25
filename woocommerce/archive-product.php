@@ -66,15 +66,13 @@ do_action( 'woocommerce_before_main_content' );
 			echo do_shortcode( $products_shortcode );
 		?>
 
-		<div class="category-description">
-			<?php
-			$term = get_queried_object();
+			<?php $term = get_queried_object();?>
 
-			if ($term && isset($term->description)) {
-				echo term_description($term->term_id, 'product_cat');
-			}
-			?>
-		</div>
+			<?php if ($term && isset($term->description) && !empty($term->description)): ?>
+				<div class="category-description">
+					<?php echo term_description($term->term_id, 'product_cat'); ?>
+				</div>
+			<?php endif; ?>
 	</ul>
 </section>
 <?php
